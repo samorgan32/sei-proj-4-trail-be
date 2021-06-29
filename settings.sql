@@ -1,0 +1,3 @@
+CREATE DATABASE trail;
+CREATE USER trailuser WITH PASSWORD 'trail';
+GRANT ALL PRIVILEGES ON DATABASE trail TO trailuser;
