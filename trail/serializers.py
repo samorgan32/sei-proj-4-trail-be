@@ -18,6 +18,13 @@ class WalkthroughSerializer(serializers.ModelSerializer):
 
 
 class SlideSerializer(serializers.ModelSerializer):
+    walkthrough = serializers.SlugRelatedField(
+        queryset = Walkthrough.objects.all(),
+        slug_field='pk'
+    )
+
+    walkthrough_owner = serializers.ReadOnlyField(source='walkthrough.owner.username')
+
     class Meta:
         model = Slide
-        fields = ('id', 'title', 'image', 'description', 'walkthrough', 'position')
+        fields = ('id', 'image', 'description', 'walkthrough', 'position', 'walkthrough_owner')

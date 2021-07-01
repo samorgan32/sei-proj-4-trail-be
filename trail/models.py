@@ -10,11 +10,13 @@ class Walkthrough(models.Model):
     def __str__(self):
         return self.title
 
-class Slide(Walkthrough):
+class Slide(models.Model):
     walkthrough = models.ForeignKey(Walkthrough, on_delete=models.CASCADE, related_name='slides')
     position = models.IntegerField()
     image = models.ImageField(upload_to='images/', default='images/default.jpeg')
     description = models.TextField()
+
+
     
     
     class Meta:

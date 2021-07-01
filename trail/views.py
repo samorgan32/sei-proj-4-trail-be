@@ -21,7 +21,7 @@ class WalkthroughViewSet(viewsets.ModelViewSet):
 class SlideViewSet(viewsets.ModelViewSet):
     queryset = Slide.objects.all()
     serializer_class = SlideSerializer
-    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    # permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
 
 
 
