@@ -9,7 +9,7 @@ from .permissions import IsOwnerOrReadOnly
 class WalkthroughViewSet(viewsets.ModelViewSet):
     queryset = Walkthrough.objects.all()
     serializer_class = WalkthroughSerializer
-    # permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return Walkthrough.objects.all().filter(owner = self.request.user)
@@ -21,7 +21,7 @@ class WalkthroughViewSet(viewsets.ModelViewSet):
 class SlideViewSet(viewsets.ModelViewSet):
     queryset = Slide.objects.all()
     serializer_class = SlideSerializer
-    # permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
 
 
 
