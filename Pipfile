@@ -10,7 +10,6 @@ dj-database-url = "*"
 gunicorn = "*"
 djoser = "*"
 django-cors-headers = "*"
-whitenoise = "*"
 djangorestframework = "*"
 boto3 = "*"
 
