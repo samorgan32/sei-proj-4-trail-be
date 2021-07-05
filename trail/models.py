@@ -9,6 +9,7 @@ class Walkthrough(models.Model):
 
     def __str__(self):
         return self.title
+    
 
 class Slide(models.Model):
     walkthrough = models.ForeignKey(Walkthrough, on_delete=models.CASCADE, related_name='slides')
@@ -25,5 +26,5 @@ class Slide(models.Model):
 
 
     def __str__(self):
-        return f'walkthrough: {self.walkthrough} slide #: {self.position}'
+        return f'{self.image}'
 

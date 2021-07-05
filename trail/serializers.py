@@ -7,14 +7,16 @@ class WalkthroughSerializer(serializers.ModelSerializer):
         read_only = True
     )
 
-    slides = serializers.StringRelatedField(
+    slide_images = serializers.StringRelatedField(
+        source = 'slides',
         many = True,
         read_only = True
     )
 
     class Meta:
         model = Walkthrough
-        fields = ('id', 'title', 'owner', 'date_created', 'cover_slide', 'slides')
+        fields = ('id', 'title', 'owner', 'date_created', 'cover_slide', 'slide_images')
+
 
 
 class SlideSerializer(serializers.ModelSerializer):
