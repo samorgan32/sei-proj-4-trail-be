@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Walkthrough, Slide 
 from .serializers import WalkthroughSerializer, SlideSerializer
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from .permissions import IsOwnerOrReadOnly
 
@@ -9,6 +10,7 @@ from .permissions import IsOwnerOrReadOnly
 class WalkthroughViewSet(viewsets.ModelViewSet):
     queryset = Walkthrough.objects.all()
     serializer_class = WalkthroughSerializer
+    authentication_classes = [TokenAuthentication, ]
     permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
 
     def get_queryset(self):
@@ -21,6 +23,7 @@ class WalkthroughViewSet(viewsets.ModelViewSet):
 class SlideViewSet(viewsets.ModelViewSet):
     queryset = Slide.objects.all()
     serializer_class = SlideSerializer
+    authentication_classes = [TokenAuthentication, ]
     permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
 
 
