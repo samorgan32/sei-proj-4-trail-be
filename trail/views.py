@@ -8,7 +8,7 @@ from .permissions import IsOwnerOrReadOnly
 
 
 class WalkthroughViewSet(viewsets.ModelViewSet):
-    queryset = Walkthrough.objects.all()
+    # queryset = Walkthrough.objects.all()
     serializer_class = WalkthroughSerializer
     authentication_classes = [TokenAuthentication, ]
     permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
