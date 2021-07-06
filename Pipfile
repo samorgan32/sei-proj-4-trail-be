@@ -12,6 +12,7 @@ djoser = "*"
 django-cors-headers = "*"
 djangorestframework = "*"
 boto3 = "*"
+pillow = "*"
 
 [dev-packages]
 

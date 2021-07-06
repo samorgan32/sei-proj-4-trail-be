@@ -12,12 +12,13 @@ class SlideSerializer(serializers.ModelSerializer):
     class Meta:
         model = Slide
         fields = ('id', 'image', 'description', 'walkthrough', 'position', 'walkthrough_owner')
-
+        
 class WalkthroughSerializer(serializers.ModelSerializer):
     owner = serializers.StringRelatedField(
         source = 'users.User',
         read_only = True
     )
+
 
     slides = SlideSerializer(many=True, read_only=True)
 
