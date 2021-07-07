@@ -19,12 +19,14 @@ class WalkthroughSerializer(serializers.ModelSerializer):
         read_only = True
     )
 
+    created_by = serializers.ReadOnlyField(source='owner.username')
+
 
     slides = SlideSerializer(many=True, read_only=True)
 
     class Meta:
         model = Walkthrough
-        fields = ('id', 'title', 'owner', 'date_created', 'cover_slide', 'slides')
+        fields = ('id', 'title', 'created_by', 'owner', 'date_created', 'cover_slide', 'slides')
 
 
 
