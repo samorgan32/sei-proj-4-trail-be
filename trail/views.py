@@ -24,7 +24,7 @@ class SlideViewSet(viewsets.ModelViewSet):
     queryset = Slide.objects.all()
     serializer_class = SlideSerializer
     authentication_classes = [TokenAuthentication, ]
-    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    permission_classes = [IsAuthenticated,]
 
 
 
